@@ -17,14 +17,12 @@ class GerenciadorTarefas:
         self.tarefas = []
         self.proximo_id = 1
 
-    # C - Create (Criar)
     def criar_tarefa(self, titulo, descricao):
         nova_tarefa = Tarefa(self.proximo_id, titulo, descricao)
         self.tarefas.append(nova_tarefa)
         self.proximo_id += 1
         print(f"\nTarefa '{titulo}' criada com sucesso!")
 
-    # R - Read (Ler/Listar)
     def listar_tarefas(self):
         if not self.tarefas:
             print("\nNenhuma tarefa cadastrada.")
@@ -34,7 +32,6 @@ class GerenciadorTarefas:
             print(tarefa)
             print("-" * 30)
 
-    # U - Update (Atualizar status ou dados)
     def atualizar_status(self, id_tarefa):
         for tarefa in self.tarefas:
             if tarefa.id == id_tarefa:
@@ -43,7 +40,6 @@ class GerenciadorTarefas:
                 return
         print("\nTarefa não encontrada.")
 
-    # D - Delete (Excluir)
     def excluir_tarefa(self, id_tarefa):
         for tarefa in self.tarefas:
             if tarefa.id == id_tarefa:
@@ -53,7 +49,6 @@ class GerenciadorTarefas:
         print("\nTarefa não encontrada.")
 
 
-# --- Menu de Interação (Exemplo de uso) ---
 def menu():
     gerenciador = GerenciadorTarefas()
     
